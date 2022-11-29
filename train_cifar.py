@@ -134,7 +134,7 @@ def visualize_model(model, testloader, device, num_images=6):
                 images_so_far += 1
                 ax = plt.subplot(1, num_images, images_so_far)
                 ax.axis('off')
-                ax.set_title(f'predicted: {classes[preds[j]]}')
+                ax.set_title(f'predicted: {classes[preds[j]]} \n GT: {classes[labels[j]]}', wrap=True)
                 imshow(inputs.cpu().data[j])
                 if images_so_far == num_images:
                     model.train(mode=was_training)
